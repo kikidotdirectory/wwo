@@ -1,0 +1,16 @@
+{
+  "typescript": {},
+  "markdown": {},
+  "malva": {},
+  "markup": {},
+  "excludes": [
+    "**/node_modules"
+  ],
+  "plugins": [
+    "npm:@dprint/typescript@0.96.1",
+    "npm:@dprint/markdown@0.24.0",
+    "npm:dprint-plugin-malva@0.16.0",
+    "npm:dprint-plugin-markup@0.27.5"
+  ],
+  "useTabs": true
+}

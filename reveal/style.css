@@ -1,0 +1,39 @@
+body {
+	position: relative;
+	box-sizing: border-box;
+	height: 100vh;
+	padding: 1rem;
+	padding-bottom: 10vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.button {
+	position: absolute;
+	right: 0;
+	left: 0;
+	bottom: 30%;
+	background: transparent;
+	border: none;
+	text-decoration: Underline;
+}
+
+body[data-done] .next,
+body:not([data-done]) .restart {
+	display: none;
+}
+
+.link {
+	position: absolute;
+	max-width: 20%;
+	overflow-wrap: anywhere;
+	padding: 1rem;
+	filter: blur(7px);
+	transition: 0.2s;
+}
+
+.link:hover {
+	filter: blur(4px);
+	transition: 0.2s;
+}
