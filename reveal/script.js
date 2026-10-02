@@ -25,8 +25,7 @@ const links = [
 	"https://bell.bz/youll-miss-publishers-when-theyre-gone/?utm_source=the-index&utm_medium=newsletter",
 	"https://zipcpu.com/blog/2026/07/18/ieee-ethics.html",
 	"https://github.com/neovim/neovim.github.io/issues/501",
-	"https://web.archive.org/web/20250306212807/",
-	"https://blog.vaxry.net/resource/articleFDO/RHMails.pdf",
+	"https://web.archive.org/web/20250306212807/https://blog.vaxry.net/resource/articleFDO/RHMails.pdf",
 ];
 
 const lastLine = lines.length - 1;
