@@ -17,6 +17,7 @@ body {
 	background: transparent;
 	border: none;
 	text-decoration: Underline;
+	cursor: pointer;
 }
 
 body[data-done] .next,
