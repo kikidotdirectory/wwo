@@ -1,0 +1,229 @@
+/* Vale's CSS Reset https://vale.rocks/posts/css-reset */
+@layer {
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+		background-repeat: no-repeat;
+	}
+
+	* {
+		padding: 0;
+		margin: 0;
+	}
+
+	html {
+		-webkit-text-size-adjust: none;
+		text-size-adjust: none;
+		block-size: 100%;
+	}
+
+	body {
+		min-block-size: 100%;
+	}
+
+	img,
+	iframe,
+	audio,
+	video,
+	canvas {
+		display: block;
+		max-inline-size: 100%;
+		block-size: auto;
+	}
+
+	svg {
+		max-inline-size: 100%;
+	}
+
+	svg:not([fill]) {
+		fill: currentColor;
+	}
+
+	input,
+	button,
+	textarea,
+	select {
+		font: inherit;
+	}
+
+	textarea {
+		resize: vertical;
+	}
+
+	fieldset,
+	iframe {
+		border: none;
+	}
+
+	p,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		overflow-wrap: break-word;
+	}
+
+	p {
+		text-wrap: pretty;
+		font-variant-numeric: proportional-nums;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-variant-numeric: lining-nums;
+	}
+
+	p,
+	blockquote,
+	q,
+	figcaption,
+	li {
+		hanging-punctuation: first allow-end last;
+	}
+
+	input,
+	label,
+	button,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		line-height: 1.1;
+	}
+
+	math,
+	time,
+	table {
+		font-variant-numeric: tabular-nums lining-nums slashed-zero;
+	}
+
+	code {
+		font-variant-numeric: slashed-zero;
+	}
+
+	table {
+		border-collapse: collapse;
+	}
+
+	abbr {
+		font-variant-caps: all-small-caps;
+		text-decoration: none;
+
+		&[title] {
+			cursor: help;
+			text-decoration: underline dotted;
+		}
+	}
+
+	sup,
+	sub {
+		line-height: 0;
+	}
+
+	summary {
+		cursor: pointer;
+	}
+
+	:disabled {
+		opacity: 0.8;
+		cursor: not-allowed;
+	}
+
+	:focus-visible {
+		outline-offset: 0.2rem;
+	}
+}
+/* end reset */
+
+:root {
+	--past-border: solid 1px #dadada;
+	--future-border: dotted 1px #dadada;
+}
+
+#calendar {
+	display: flex;
+	gap: 1.25rem;
+	flex-direction: column-reverse;
+	align-items: center;
+	padding-bottom: 40vh;
+	padding-top: 2rem;
+}
+
+#calendar section {
+	width: min(100%, 22ch);
+}
+
+#calendar table {
+	--border: var(--past-border);
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	& tr {
+		display: contents;
+	}
+}
+
+td {
+	aspect-ratio: 1;
+}
+
+.day {
+	border: var(--border);
+	margin: -0.5px;
+	display: grid;
+	place-content: center;
+}
+
+.weekend {
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+.future {
+	opacity: 0.4;
+}
+
+#popup {
+	padding: 2rem;
+	width: min(80ch, 100%);
+	height: 100vh;
+	position: fixed;
+	inset: 0;
+	place-self: center;
+	display: flex;
+	flex-direction: column;
+}
+
+#popup .close {
+	align-self: end;
+	background: transparent;
+	border: none;
+	font-size: 1.2rem;
+	cursor: pointer;
+}
+
+.content-wrapper {
+	overflow-y: scroll;
+	display: flex;
+	flex-direction: column;
+	max-width: 100%;
+	min-height: 0; /* lets it shrink inside #popup so it scrolls instead of overflowing */
+	background-color: white;
+	border: #dadada solid 1px;
+	padding: 0.5rem 0.75rem 1.5rem;
+	gap: 0.5rem;
+}
+
+#calendar button {
+	font-size: 0.7rem;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+}
