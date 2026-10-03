@@ -53,7 +53,7 @@ function openPopup(srcs) {
 	wrapper.classList.add("content-wrapper");
 	for (let src of srcs) {
 		let img = document.createElement("img");
-		img.src = "./" + src;
+		img.src = src;
 		img.alt = "";
 		wrapper.append(img);
 	}
